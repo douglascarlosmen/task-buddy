@@ -35,6 +35,16 @@ class TasksController < ApplicationController
         end
     end
 
+    def destroy
+        @task = Task.find(params[:id])
+
+        if @task.destroy
+            redirect_to tasks_path, status: :see_other
+        else
+            render :show, status: :unprocessable_entity
+        end
+    end
+
     private
         def task_params
             params.require(:task).permit(:title, :body, :status)

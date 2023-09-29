@@ -2,3 +2,10 @@
 <h3>Status: <%= @task.status %></h3>
 
 <p><%= @task.body %></p>
+
+<%= link_to "Edit", edit_task_path %>
+
+<%= link_to "Destroy", task_path, data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+} %>
