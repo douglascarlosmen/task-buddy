@@ -1,5 +1,7 @@
 <h1>Tasks</h1>
 
+<%= link_to "New", new_task_path %>
+
 <% unless @tasks.empty? %>
 <ul>
     <% @tasks.each do |task| %>
