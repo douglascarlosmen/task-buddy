@@ -8,19 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+    </style>
+
     <%= javascript_importmap_tags %>
   </head>
 <body>
-    <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-6">
-              <div class="centered-container">
-                  <h2 class="text-center mb-4"><%= yield :h2title %></h2>
-                  <%= yield %>
-              </div>
-          </div>
-      </div>
-    </div>
+    <%= yield %>
     <%= javascript_include_tag "bootstrap" %>  
 </body>
 </html>
