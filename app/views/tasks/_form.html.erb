@@ -1,23 +1,23 @@
 <%= form_with model: @task do |form| %>
     <div>
-        <strong><%= form.label :title %></strong><br />
-        <%= form.text_field :title %><br />        
+        <strong><%= form.label "Título" %></strong><br />
+        <%= form.text_field :title, class: "form-control" %><br />        
     </div>
 
     <br />
 
     <div>
-        <strong><%= form.label :body %></strong><br />
-        <%= form.text_area :body %><br />
+        <strong><%= form.label "Descrição" %></strong><br />
+        <%= form.text_area :body, class: "form-control" %><br />
     </div>
 
     <div>
-        <%= form.label :status %><br>
-        <%= form.select :status, ['pending', 'in_progress', 'finished'], selected: @task.status %>
+        <%= form.label "Status" %><br>
+        <%= form.select(:status, ['pending', 'in_progress', 'finished'], {:selected => @task.status}, { :class => "form-select" }) %>
     </div>
 
     <div>
         <br />
-        <%= form.submit %>
+        <%= form.submit "Criar Tarefa", class: "btn btn-success btn-block btn-lg btn-width-full" %>
     </div>
 <% end %>

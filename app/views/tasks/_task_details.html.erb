@@ -1,0 +1,9 @@
+<div class="task-details">    
+    <p><strong>Descrição:</strong> <%= task.body %></p>
+    <p><strong>Status:</strong> <%= task.status %></p>    
+    <%= link_to "Editar", edit_task_path, class: "btn btn-primary btn-block btn-lg btn-width-full mt-3" %>
+    <%= link_to "Excluir", task_path, data: {
+        turbo_method: :delete,
+        turbo_confirm: "Tem certeza que deseja excluir esta tarefa?"
+    }, class: "btn btn-danger btn-block btn-lg btn-width-full mt-3" %>
+</div>

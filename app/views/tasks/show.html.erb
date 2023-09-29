@@ -1,11 +1,7 @@
-<h1>Tarefa: <%= @task.title %></h1>
-<h3>Status: <%= @task.status %></h3>
+<% content_for :h2title do %>
+    Tarefa #<%= @task.id %>
+<% end %>
 
-<p><%= @task.body %></p>
+<%= render "task_details", task: @task %>
 
-<%= link_to "Edit", edit_task_path %>
-
-<%= link_to "Destroy", task_path, data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-} %>
+<%= render "partials/back_button" %>
