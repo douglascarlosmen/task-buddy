@@ -13,7 +13,7 @@
 
     <div>
         <%= form.label :status %><br>
-        <%= form.select :status, ['pending', 'in_progress', 'finished'], selected: 'pending' %>
+        <%= form.select :status, ['pending', 'in_progress', 'finished'], selected: @task.status %>
     </div>
 
     <div>
