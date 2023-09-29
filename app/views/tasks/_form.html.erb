@@ -1,0 +1,23 @@
+<%= form_with model: @task do |form| %>
+    <div>
+        <strong><%= form.label :title %></strong><br />
+        <%= form.text_field :title %><br />        
+    </div>
+
+    <br />
+
+    <div>
+        <strong><%= form.label :body %></strong><br />
+        <%= form.text_area :body %><br />
+    </div>
+
+    <div>
+        <%= form.label :status %><br>
+        <%= form.select :status, ['pending', 'in_progress', 'finished'], selected: 'pending' %>
+    </div>
+
+    <div>
+        <br />
+        <%= form.submit %>
+    </div>
+<% end %>
