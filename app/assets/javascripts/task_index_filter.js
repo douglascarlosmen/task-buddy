@@ -1,14 +1,22 @@
-function changeTaskFilterSelectValue() {
-    let order = $("#task_filter_input").val();
-    $("#task_filter_select").val(order).trigger();
+function changeTaskOrderSelectValue() {
+    let order = $("#task_order_input").val();
+    $("#task_order_select").val(order).trigger();
 }
 
-$(document).ready(function(){changeTaskFilterSelectValue});
+$(document).ready(function(){changeTaskOrderSelectValue});
 
-function handleTaskFilterSelectChange() {
+function handleTaskOrderSelectChange() {
     let order = $(this).val();
-    $("#task_filter_input").val(order);
-    $("#task_filter_form").submit();
+    $("#task_order_input").val(order);
+    $("#task_order_form").submit();
 }
 
-$(document).delegate("#task_filter_select", "change", handleTaskFilterSelectChange);
+$(document).delegate("#task_order_select", "change", handleTaskOrderSelectChange);
+
+function handleTaskStatusButtonClick() {
+    let status = $(this).data('status');
+    $("#task_status_input").val(status);
+    $("#task_status_form").submit();
+}
+
+$(document).delegate(".task_status_btn", "click", handleTaskStatusButtonClick);

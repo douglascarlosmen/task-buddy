@@ -4,8 +4,15 @@ class TasksController < ApplicationController
     layout "application"
 
     def index        
-        @tasks = Task.order(created_at: order_filter)
+        @status = params[:status]       
         @order = params[:order]
+        @status = params[:status]
+
+        @tasks = Task.order(created_at: order_filter)
+
+        if !@status.nil? && @status != "all"
+            @tasks = @tasks.where(status: @status)
+        end
     end
 
     def show
@@ -60,7 +67,7 @@ class TasksController < ApplicationController
         end
 
         def order_filter
-            if params[:order] == "ASC"
+            if @order == "ASC"
                 :asc
             else
                 :desc
