@@ -3,13 +3,15 @@
 <% end %>
 
 <div class="d-flex justify-content-center mb-3">
-    <%= link_to "Cadastrar nova tarefa", new_task_path, { class: "btn btn-primary btn-lg" } %>
+    <%= link_to "Cadastrar nova tarefa", new_task_path, { class: "btn btn-info btn-lg" } %>
 </div>
 
 <% unless @tasks.empty? %>
-<div class="row">
+<%= render "filters" %>
+<div class="row">    
     <% @tasks.each do |task| %>
         <%= render "task", task: task %>
     <% end %>
 </div>
+
 <% end %>

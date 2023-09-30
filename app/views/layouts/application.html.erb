@@ -17,14 +17,14 @@
 
     <div class="container">
       <div class="row justify-content-center">
-          <div class="col-md-6">
-              <div class="centered-container">
-                  <h2 class="text-center mb-4"><%= yield :h2title %></h2>
-                  <%= yield %>
-              </div>
-          </div>
+        <div class="centered-container">
+            <h2 class="text-center mb-4"><%= yield :h2title %></h2>
+            <%= yield %>
+        </div>
       </div>
     </div>
-    <%= javascript_include_tag "bootstrap" %>  
+    <%= javascript_include_tag "bootstrap" %>    
+    <%= javascript_include_tag "jquery" %>    
+    <%= javascript_include_tag "task_index_filter" %>
 </body>
 </html>

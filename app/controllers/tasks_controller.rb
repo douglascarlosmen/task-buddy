@@ -3,8 +3,9 @@ class TasksController < ApplicationController
     before_action :authenticate_user!
     layout "application"
 
-    def index
-        @tasks = Task.all
+    def index        
+        @tasks = Task.order(created_at: order_filter)
+        @order = params[:order]
     end
 
     def show
@@ -52,5 +53,17 @@ class TasksController < ApplicationController
     private
         def task_params
             params.require(:task).permit(:title, :body, :status)
+        end
+
+        def filter_params
+            params.permit(:order)
+        end
+
+        def order_filter
+            if params[:order] == "ASC"
+                :asc
+            else
+                :desc
+            end
         end
 end

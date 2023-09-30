@@ -1,6 +1,6 @@
 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <div class="task-card task-<%= task.status %>-card">
-        <h3><%= link_to task.title, task %></h3>
+        <h3><%= link_to task.title, task, class: "text-" + task.status_color %></h3>
         <p><%= task.body %></p>
         <p class="text-<%= task.status_color %>"><%= task.formatted_status %></p>        
     </div>

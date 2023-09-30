@@ -1,0 +1,19 @@
+<div class="row mt-5 d-flex justify-content-center text-center">
+    <div class="col-12">        
+        <%= form_tag("/", method: "get", id: "task_filter_form") do %>
+            <%= label_tag "Ordenação" %>
+            <%= select_tag(:order, options_for_select([["Mais recente primeiro", "DESC"], ["Mais antigo primeiro primeiro", "ASC"]], @order), id: "task_filter_select", class: "form-select form-select-sm mb-3") %>
+        <% end %>        
+    </div>    
+</div>
+<div class="row mt-2 mb-5 d-flex justify-content-center text-center">
+    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+        <button type="button" class="btn btn-warning btn-sm btn-block btn-width-full mb-2">Pendentes</button>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+        <button type="button" class="btn btn-primary btn-sm btn-block btn-width-full mb-2">Andamento</button>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+        <button type="button" class="btn btn-success btn-sm btn-block btn-width-full mb-2">Concluídas</button>
+    </div>
+</div>
